@@ -17,16 +17,19 @@ public class ComparatorExamplelist {
 
         System.out.println("--ordem e inserção--");
         System.out.println(estudantes);
-
+//sintaxe lambda, first e second
         estudantes.sort((first,second) -> first.getIdade()- second.getIdade());
         System.out.println("--ordem natural dos números - idade--");
         System.out.println(estudantes);
 
+//sintaxe lambda, first e second
         estudantes.sort((first,second) -> second.getIdade()- first.getIdade());
         System.out.println("--ordem Reversa dos números - idade--");
         System.out.println(estudantes);
 
-
+/*não implementei os outros metodos pois eles fazem a mesma coisa porem com implementações diferente
+não  implementei pois estada ficando muit complexo.
+*/
 
     }
 
