@@ -44,6 +44,29 @@ public class ExemplosStremAPI {
         // exibe cada elemento no console sem retornar a mesma coleção
        System.out.println("Retorna os elementos novamente:");
        estudantes.stream().forEach(System.out::println);
+       //retorna true se todos os elementos possuem a letra W no nome
+        System.out.println("Tem algum elemento com W no nome:" + estudantes.stream().anyMatch((elemento) -> elemento.contains("W")));
+        //Retorna o primeiro elemento da coleção, se existir exibe no console
+        System.out.println("Retorna o primeiro elemento da coleção:");
+                 estudantes.stream().findFirst().ifPresent(System.out::println);
+
+        //Exemplo de operação encadeada
+        System.out.println("Operação encadeda:");
+        System.out.println(estudantes.stream()
+                .peek(System.out::println)
+                .map(estudante ->
+                        estudante.concat("-").concat(String.valueOf(estudante.length())))
+                .peek(System.out::println)
+                .filter((estudante) ->
+                        estudante.toLowerCase().contains("r"))
+                .collect(Collectors.toList()));
+
+     /*Ou este :*/
+            //    .collect(Collectors.joining(",")));
+
+    /*Ou este :*/
+            //   .collect(Collectors.toSet()));
+    /*Ou este :*/
 
 
 
